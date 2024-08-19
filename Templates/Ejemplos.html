@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boostrapp</title>
+        <!--Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+
+        <!-- Guias -->
+        <div class="row">
+            <div class="col border">1</div>
+            <div class="col border">2</div>
+            <div class="col border">3</div>
+            <div class="col border">4</div>
+            <div class="col border">5</div>
+            <div class="col border">6</div>
+            <div class="col border">7</div>
+            <div class="col border">8</div>
+            <div class="col border">9</div>
+            <div class="col border">10</div>
+            <div class="col border">11</div>
+            <div class="col border">12</div>
+        </div>
+
+        <div class="row">
+            <div class="col">a</div>
+            <div class="col">b</div>
+            <div class="col">c</div>
+            <div class="col">d</div>
+
+        </div>
+
+        <!-- Disposicion de Contenido por Columnas -->
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3 border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus mollitia inventore non expedita, unde eius laudantium quidem sit alias ipsam!</div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div class="col border">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur ipsum voluptates incidunt! Accusamus impedit autem, delectus odio minima dolorum tempora.</div>
+        </div>
+
+        <!-- Tipografias -->
+        <div class="h1">Hello World</div>
+
+        <div class="display-5">Hello World</div>
+
+        <p class="lead">Autem minus quidem voluptatum esse vero vitae, dicta ipsam inventore consequuntur cupiditate modi debitis corporis praesentium et saepe molestiae velit error rem dolorem ducimus neque ad! A laudantium mollitia repudiandae?</p>
+
+        <!-- Etiquetas de Parrafos -->
+        <p><del>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus unde aliquid voluptate molestias officiis, totam, accusamus odit, quam dolores nemo alias inventore minus ab harum! Corrupti fuga blanditiis non libero.</del></p>
+        <p><s>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi, ad tempora obcaecati assumenda error eius, soluta maxime, totam libero recusandae exercitationem. Dignissimos placeat molestias et sapiente dicta delectus magni dolorem.</s></p>
+        <p><ins>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ut ab deleniti assumenda voluptas vero possimus reiciendis magnam commodi est! Veniam voluptatem vero eaque error incidunt vel amet numquam non?</ins></p>
+        <p><u>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ab, asperiores sapiente tenetur explicabo perferendis, illum unde hic libero, quod possimus eum saepe rem maxime. Eveniet laborum ipsam dignissimos error!</u></p>
+        <p><small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat labore at quos quia laborum veritatis voluptas quo voluptatibus atque quis, autem illum hic sapiente nemo accusantium cumque similique illo! Distinctio.</small></p>
+        <p><strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus iste suscipit ullam ratione tempore maxime dolor eius, dicta ex nemo, ea odio! Beatae ratione perspiciatis ullam veniam, voluptatum ex inventore?</strong></p>
+        <p><em>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum sit saepe corporis velit nisi omnis maxime, animi exercitationem illo accusamus, ab in! Numquam autem qui maiores porro voluptatibus deleniti ea?</em></p>
+
+        <blockquote class="blockquote text-center">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa neque repellendus, voluptatibus autem molestiae inventore optio ea sapiente. Officia, consequuntur non? Nostrum, eius? Tempore dolorum, corporis officia non culpa aspernatur!</p>
+            <footer class="blockquote-footer">
+                Escrito por <cite title="Nolberth Vargas">Nolberth Vargas</cite>
+            </footer>
+        </blockquote>
+
+        <!-- Etiquetas de Listas -->
+        <ul class="list-unstyled">
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+            <li>Elemento 4</li>
+            <li>Elemento 5</li>
+            <ul>
+                <li>Subelemento 1</li>
+                <li>Subelemento 2</li>
+                <li>Subelemento 3</li>
+                <li>Subelemento 4</li>
+                <li>Subelemento 5</li>
+            </ul>
+        </ul>
+
+        <ol class="list-inline">
+            <li class="list-inline-item">Elemento 1</li>
+            <li class="list-inline-item">Elemento 2</li>
+            <li class="list-inline-item">Elemento 3</li>
+            <li class="list-inline-item">Elemento 4</li>
+            <li class="list-inline-item">Elemento 5</li>
+        </ol>
+
+        <!-- Imagenes Responsivas -->
+        <div class="py-5">
+            <div class="w-25 float-start">
+                <img class="img-fluid rounded" src="p4.jpg" alt="">
+            </div>
+            <div class="w-25 mx-auto">
+                <img class="img-fluid rounded" src="p4.jpg" alt="">
+            </div>
+        </div>
+
+        <!-- Tablas Responsivas -->
+        <div class="py-4 table-responsive"> 
+            <table class="table table-hover table-sm caption-top">
+                <caption>Lista de Usuarios</caption>
+                <thead>
+                    <tr class="table-dark">
+                        <th>#</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Profesion</th>
+                        <th>Descripcion</th>
+                        <th>Descripcion2</th>
+                        <th>Descripcion3</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Nolberth</td>
+                        <td>Vargas</td>
+                        <td>Programador</td>
+                        <td>Descripcion1</td>
+                        <td>Descripcion2</td>
+                        <td>Descripcion3</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Alvaro</td>
+                        <td>Esquivel</td>
+                        <td>Contador</td>
+                        <td>Descripcion1</td>
+                        <td>Descripcion2</td>
+                        <td>Descripcion3</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>Angie</td>
+                        <td>Salvador</td>
+                        <td>Abogada</td>
+                        <td>Descripcion1</td>
+                        <td>Descripcion2</td>
+                        <td>Descripcion3</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>#</td>
+                        <td>footer</td>
+                        <td>footer</td>
+                        <td>footer</td>
+                        <td>footer</td>
+                        <td>footer</td>
+                        <td>footer</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <!-- Formularios -->
+        <form action="">
+            <div class="mb-3">
+                <label for="name">Nombre</label>
+                <input placeholder="Por favir Rellene este Espacio" class="form-control" name="name" type="text" id="name" disabled>
+            </div>
+    
+            <div class="mb-3">
+                <label for="name">Email</label>
+                <input value="andresvargas@gmail.com" placeholder="Por favor Rellene este Espacio" class="form-control-plaintext" name="email" type="email" id="email" disabled readonly>
+            </div>
+    
+            <div class="mb-3">
+                <label for="descripcion">Descripcion</label>
+                <textarea class="form-control" placeholder="Por favor escriba una breve Descripcion" name="" id="description" cols="30" rows="10"></textarea>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Constancia en PDF</title>
+    
+</head>
+<body>
+    <div id="content">
+        <img class="escudo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpYeHGk12jvAM-4-ULQK8qrY1YYc8WawCwEw&s" width="90" height="90">
+        <img class="insignia" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpYeHGk12jvAM-4-ULQK8qrY1YYc8WawCwEw&s" width="60" height="70">
+        <p class="lema">ESTUDIO TRABAJO<br>Y ACCION<br>1944 - 2024</p>
+        <p style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: gray; text-align: center;">
+            INSTITUCIÓN EDUCATIVA N° 32004 "SAN PEDRO" DE HUÁNUCO<br>
+            "AÑO DEL BICENTENARIO DE LA CONSOLIDACION DE NUESTRA<br>
+            INDEPENDENCIA Y DE LA CONMEMORACION DE LAS HEROICAS<br>
+            BATALLAS DE JUNIN Y AYACUCHO"<br><br>
+            Código modular Nivel Primaria No.0288399<br>
+            Código modular Nivel Inicial No. 1449909
+        </p>
+        <hr style="border-color: gray;"><span></span><hr style="border-color: gray;">
+        <br>
+        <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 30px; text-align: center; text-decoration: underline; padding-bottom: 40px;">CONSTANCIA DE ESTUDIOS</h1>
+        <p style="padding-left: 2em; padding-right: 2em; font-family: Arial, Helvetica, sans-serif; font-size: 20px;">EL Director de la Institucion Educativa Integrada 32004 - "San Pedro" de la ciudad de Huanuco, que al final suscribe.</p>
+        <br>
+        <h2 style="font-family: Arial, Helvetica, sans-serif; font-size: 25px; text-align: center;">HACE CONSTAR QUE</h2>
+        <p style="padding-left: 2em; padding-right: 2em; font-family: Arial, Helvetica, sans-serif; font-size: 20px;">El estudiante que a continuación se menciona está matriculado en el presente año académico y viene asistiendo con total normalidad, en nuestra Institución Educativa y sus datos registrados en el sistema son:</p>
+        <br>
+        <div style="padding-left: 3em; padding-right: 3em;">
+        <table style="border-collapse: collapse; width: 100%;">
+            <thead>
+                <tr>
+                    <th>DNI</th>
+                    <th>NOMBRE</th>
+                    <th style="width:10em;">GRADO/SECCION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se insertarán las filas de la tabla dinámicamente -->
+            </tbody>
+        </table>
+        </div>
+        <br>
+        <p style="padding-left: 2em; padding-right: 2em; font-family: Arial, Helvetica, sans-serif; font-size: 20px;">Se otorga la presente constancia a petición de la parte interesada, para los fines que estime conveniente.</p>
+        <br>
+        <p style="text-align: right; padding-left: 2em; padding-right: 2em; font-family: Arial, Helvetica, sans-serif; font-size: 20px;">Huánuco, <!-- Fecha aquí --></p>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h2 style="text-align: center; text-decoration: overline; font-family: Arial, Helvetica, sans-serif;">PROF. DIONICIO FABIAN LEON</h2>
+        <h3 style="text-align: center; font-family: Arial, Helvetica, sans-serif;">DIRECTOR</h3>
+    </div>
+    <button onclick="generarConstancia()">Generar Constancia</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        function generarConstancia() {
+            const table = document.querySelector('table');
+            const rows = table.querySelectorAll('tbody tr');
+
+            // Insertar filas de datos en la tabla
+            const tbody = table.querySelector('tbody');
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                tbody.innerHTML += `
+                    <tr>
+                        <td>"dni"</td>
+                        <td>"nombre"</td>
+                        <td>"gs"</td>
+                    </tr>
+                `;
+            });
+
+            // Obtener la fecha actual
+            const fecha = new Date();
+            const fechaFormateada = fecha.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+            document.querySelector('p').innerHTML = `Huánuco,`;
+
+            // Usar html2canvas para capturar el contenido del div
+            html2canvas(document.querySelector('#content')).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                pdf.addImage(imgData, 'PNG', 10, 10, 190, canvas.height * 190 / canvas.width);
+                pdf.save('constancia_estudios.pdf');
+                alert('La constancia de estudios se ha generado correctamente.');
+            }).catch(error => {
+                console.error('Error al generar el PDF:', error);
+                alert('Hubo un error al generar la constancia. Por favor, inténtelo de nuevo.');
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+#botones{
+    display: flex;
+    justify-content: end;
+    padding: 1em 0;
+    flex-wrap: wrap;
+    width: 85%;
+}
+.button {
+    --font-color: #323232;
+    --bg-color-sub: #dedede;
+    --bg-color: #eee;
+    --main-color: #323232;
+    position: relative;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    border-radius: 10px;
+    margin: .5em;
+    overflow: hidden;
+    z-index: 1;
+    }
+.button, .button__icon, .button__text {
+    transition: all 0.3s;
+    }
+.button .button__text {
+    transform: translateX(22px);
+    color: white;
+    font-weight: 600;
+    }
+.button .button__icon {
+    position: absolute;
+    transform: translateX(150px);
+    height: 100%;
+    width: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    }
+.button:hover .button__text {
+    color: transparent;
+    }
+.button:hover .button__icon {
+    width: 200px;
+    transform: translateX(-3%);
+    }
+    
+.download-button {
+    position: absolute;
+    right: 0;
+    margin-right: 15%;
+    margin-top: 2em;
+    border-width: 0;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+    }
+
+.download-button .docs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 40px;
+    padding: 0 10px;
+    border-radius: 4px;
+    z-index: 1;
+    background-color: #242a35;
+    border: solid 1px #e8e8e82d;
+    transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+.download {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 70%;
+    margin: 0 auto;
+    z-index: -1;
+    border-radius: 4px;
+    transform: translateY(1%);
+    background-color: #01e056;
+    transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+.download-button:hover .download {
+    transform: translateY(90%)
+    }
+
+.download svg polyline,.download svg line {
+    animation: docs 1s infinite;
+    }
+
+@keyframes docs {
+    0% {
+    transform: translateY(0%);
+    }
+
+    50% {
+    transform: translateY(-15%);
+    }
+
+    100% {
+    transform: translateY(0%);
+    }
+}
