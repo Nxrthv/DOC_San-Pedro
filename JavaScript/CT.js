@@ -51,6 +51,15 @@ function agregar() {
     }
 }
 
+// Cargar datos de la tabla guardados en cache
+function cargarDatosDesdeLocalStorage() {
+    const datosGuardados = localStorage.getItem('datosTabla');
+    if (datosGuardados) {
+        const tableBody = document.querySelector('table tbody');
+        tableBody.innerHTML = datosGuardados;
+    }
+}
+
 // Generar y descargar el PDF
 function generarCT() {
     const table = document.querySelector('table');
@@ -112,13 +121,13 @@ function generarCT() {
     const codmod = rows[0].getAttribute('data-codmod');
     
     doc.setFontSize(11);
-    doc.text(`Visto la solicitud del señor/a ${apoderado} apoderado de/la menor ${estudiante} y la constancia de vacante otorgada por la I.E. ${iedestino}`, 26, 70, { maxWidth: 160 });
+    doc.text(`Visto la solicitud del señor/a ${apoderado} apoderado de/la menor ${estudiante} y la constancia de vacante otorgada por la I.E. ${iedestino}.`, 26, 70, { maxWidth: 160 });
     
     doc.setFont('helvetica', 'bold');
     doc.text('CONSIDERANDO:', 26, 87);
     doc.setFont('helvetica', 'normal');
 
-    doc.text(`Que la recurrente solicita el traslado de matrícula formalmente y habiéndose verificado la constancia de vacante para el ${grado} grado de nivel PRIMARIA expedido por la I.E. ${iedestino}, provincia y región HUÁNUCO.`, 26, 94, { maxWidth: 160 });
+    doc.text(`Que la recurrente solicita el traslado de matrícula formalmente y habiéndose verificado la constancia de vacante para el grado de ${grado} de nivel ${nivel} expedido por la I.E. ${iedestino}, provincia y región HUÁNUCO.`, 26, 94, { maxWidth: 160 });
 
     doc.text(`Que, al amparo del numeral 5.10 de la Resolución Ministerial N° 665-2018-MINEDU “Norma sobre de matrícula en la Educación Básica”, concordante con la Resolución Ministerial No. 665-2018-MINEDU.Norma que regula la Matrícula escolar se establece el procedimiento para realizar los traslados de matrícula y de acuerdo a lo dispuesto en el literal c) de la acotada norma, el director de la I.E. origen, autoriza el traslado de matrícula.`, 26, 112, { maxWidth: 160 });
 

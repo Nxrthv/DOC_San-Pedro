@@ -1,3 +1,4 @@
+//Rutas
 function CE(){
     window.location.href = ('/Templates/CE.html')
 }
@@ -7,15 +8,6 @@ function CT(){
 }
 
 // Funciones
-// Cargar datos de la tabla guardados en cache
-function cargarDatosDesdeLocalStorage() {
-    const datosGuardados = localStorage.getItem('datosTabla');
-    if (datosGuardados) {
-        const tableBody = document.querySelector('table tbody');
-        tableBody.innerHTML = datosGuardados;
-    }
-}
-
 // Guardar datos de la tabla en cache
 function guardarDatosEnLocalStorage() {
     const tableBody = document.querySelector('table tbody');

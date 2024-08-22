@@ -35,6 +35,15 @@ function agregar() {
     }
 }
 
+// Cargar datos de la tabla guardados en cache
+function cargarDatosDesdeLocalStorage() {
+    const datosGuardados = localStorage.getItem('datosTabla');
+    if (datosGuardados) {
+        const tableBody = document.querySelector('table tbody');
+        tableBody.innerHTML = datosGuardados;
+    }
+}
+
 // Cargar datos al iniciar la página
 window.onload = cargarDatosDesdeLocalStorage;
 

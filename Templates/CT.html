@@ -18,8 +18,8 @@
                 <label for="nivel" class="py-1">Nivel de Educacion:</label>
                 <select class="form-select" name="nivel" id="nivel" required onchange="cambiarGrado(this.value)">
                     <option disabled selected>Selecciona el Nivel</option>
-                    <option value="Inicial">INICIAL</option>
-                    <option value="Primaria">PRIMARIA</option>
+                    <option value="INICIAL">INICIAL</option>
+                    <option value="PRIMARIA">PRIMARIA</option>
                 </select>
             </div>
             <div class="col-12 col-md-4 mb-3">
@@ -106,9 +106,9 @@
     
         let opciones = [];
     
-        if (nivel === 'Inicial') {
+        if (nivel === 'INICIAL') {
             opciones = ['3 AÑOS','4 AÑOS','5 AÑOS'];
-        } else if (nivel === 'Primaria') {
+        } else if (nivel === 'PRIMARIA') {
             opciones = ['PRIMERO','SEGUNDO','TERCERO','CUARTO','QUINTO','SEXTO'];
         }
     
