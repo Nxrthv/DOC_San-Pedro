@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/insignia.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>San Pedro - Padres de Familia</title>
+  <style>
+    /* ::-webkit-scrollbar{
+        display: none;
+    } */
+    #nav{
+        background-color: rgba(192, 30, 30, 0.733);
+    }
+    th{
+        text-align: center;
+    }
+    td{
+        border: 1px solid darkgray;
+    }
+    .nota{
+        text-align: center;
+    }
+    .table-bordered {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .table-bordered th, .table-bordered td {
+      border: 1px solid #dee2e6;
+    }
+    .nav-link:hover{
+        transform: scale(105%);
+        transition: .3s ease-in-out;
+    }
+    .line:hover{
+        border-bottom: 2px solid white;
+    }
+    #container {
+      position: relative;
+      width: 100%;
+      height: 150vh;
+      overflow: hidden;
+    }
+    .window {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: transform 1s ease;
+    }
+    .window-2 {
+      transform: translateX(100%);
+    }
+    .slide-left {
+      transform: translateX(-100%);
+    }
+    .slide-left-reverse {
+      transform: translateX(-100%);
+    }
+    .btn-slide {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .btn-back {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+</style>
+</head>
+<body>
+    <nav id="nav" class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-light text-white" href=""><img src="/Imgs/insignia.ico" style="width: 40px; margin-right: 1em;">I.E.I. Nº 32004 San Pedro - Huanuco</a>
+          
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="filter: brightness(10);"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <button class="btn text-white px-4" onclick="goBackToFirstWindow()"><span class="line">Notas</span></button>
+              </li>
+              <li class="nav-item">
+                <button class="btn text-white px-4" onclick="showSecondWindow()"><span class="line">Docentes</span></button>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <div id="container">
+
+        <div id="window1" class="window window-1 bg-warning">
+            <div class="text-center my-5 text-white">
+                <h1 class="display-4 fw-bold">Portal de Informacion San Pedro</h1>
+                <p class="w-50 m-auto">En este apartado los padres de familia de nuestros institucion, podran consultar informacion sobre sus hijos, sus logros academicos e informacion de sus docentes </p>
+            </div>
+        
+            <div class="form-control w-75 m-auto my-5">
+                <label class="form-label" for="userId">Ingrese el Numero de DNI del alumno para ver sus calificaciones.</label>
+                <div class="input-group mb-3">
+                    <input type="text" id="userId" class="form-control" placeholder="DNI" aria-label="Username">
+                </div>
+                <button id="loadData" class="btn mb-3 btn-success">Buscar Cursos</button>
+            </div>
+        
+            <div id="userMessage" class="alert alert-info w-75 m-auto mb-5" style="display: none;"></div>
+            
+            <div class="w-75 m-auto mb-5">
+                <table class="table table-light table-bordered rounded">
+                    <thead>
+                      <tr>
+                        <th>Curso ID</th>
+                        <th>Curso</th>
+                        <th>Nota</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+
+        <div id="window2" class="window window-2 bg-info">
+            <div class="text-center my-5 text-white">
+                <h1 class="display-4 fw-bold">Plana Docente 2024</h1>
+                <p class="w-50 m-auto">Este apartado es para obtener informacion sobre nuestra plana administrativa y docente del periodo 2023 - 2024</p>
+            </div>
+            <div class="form-control w-75 m-auto my-5">
+                <label class="form-label" for="gradoSelect">Seleccione un grado:</label>
+                <select id="gradoSelect" class="form-select">
+                  <option value="" disabled selected>Seleccione un grado</option>
+                  <option value="1">1°</option>
+                  <option value="2">2°</option>
+                  <option value="3">3°</option>
+                  <option value="4">4°</option>
+                  <option value="5">5°</option>
+                  <option value="6">6°</option>
+                </select>
+                <button id="loadTeachers" class="btn mt-3 btn-success">Consultar Docentes</button>
+            </div>
+            
+            <div class="w-75 m-auto mb-5">
+              <table class="table table-light table-bordered rounded">
+                <thead>
+                  <tr>
+                    <th>Sección</th>
+                    <th>Nombre del Docente</th>
+                    <th>Telefono</th>
+                  </tr>
+                </thead>
+                <tbody id="teacherTableBody">
+                </tbody>
+              </table>
+            </div>
+        </div>
+        
+    </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    let usersJSON = [];
+    let coursesJSON = [];
+    let teachersJSON = [];
+  
+    function loadJSONFiles() {
+      fetch('Alumnos.json')
+        .then(response => response.json())
+        .then(data => {
+          usersJSON = data;
+        })
+        .catch(error => console.error('Error al cargar Alumnos.json:', error));
+  
+      fetch('Cursos.json')
+        .then(response => response.json())
+        .then(data => {
+          coursesJSON = data;
+        })
+        .catch(error => console.error('Error al cargar Cursos.json:', error));
+    }
+  
+    function searchAndDisplayUserCourses() {
+      const userId = parseInt($('#userId').val());
+  
+      $('#tableBody').empty();
+      $('#userMessage').hide();
+  
+      const user = usersJSON.find(u => u.id === userId);
+  
+      if (user) {
+        $('#userMessage').text(`¡Hola! alumn@ ${user.nombre}, estas son tus calificaciones de este año 🙂`).show();
+  
+        user.cursos.forEach(userCourse => {
+          const course = coursesJSON.find(c => c.id === userCourse.cursoId);
+          
+          if (course) {
+            $('#tableBody').append(`
+              <tr>
+                <td>${course.id}</td>
+                <td>${course.nombre}</td>
+                <td class="nota">${userCourse.nota}</td>
+              </tr>
+            `);
+          }
+        });
+      } else {
+        $('#tableBody').append(`
+          <tr>
+            <td colspan="3" class="text-center text-danger">Usuario no encontrado</td>
+          </tr>
+        `);
+      }
+    }
+
+    function loadTeachersJSON() {
+        fetch('Docentes.json')
+        .then(response => response.json())
+        .then(data => {
+            teachersJSON = data;
+        })
+        .catch(error => console.error('Error al cargar Docentes.json:', error));
+    }
+
+    function searchTeachers() {
+        const gradoSelect = document.getElementById('gradoSelect');
+        if (!gradoSelect.value) {
+            alert('Por favor, selecciona un grado.');
+            return;
+        }
+        const grado = parseInt(gradoSelect.value);
+        const teacherTableBody = document.getElementById('teacherTableBody');
+
+        teacherTableBody.innerHTML = '';
+
+        const gradoData = teachersJSON.find(g => g.grado === grado);
+
+        if (gradoData) {
+        const secciones = gradoData.secciones;
+
+        Object.keys(secciones).forEach(seccion => {
+            const docente = secciones[seccion];
+
+            teacherTableBody.innerHTML += `
+            <tr>
+                <td class="nota">${seccion}</td>
+                <td>${docente.nombre}</td>
+                <td class="nota">${docente.telefono}</td>
+            </tr>
+            `;
+        });
+        } else {
+        teacherTableBody.innerHTML = `
+            <tr>
+            <td colspan="3" class="text-center text-danger">No hay información para este grado</td>
+            </tr>
+        `;
+        }
+    }
+
+    document.getElementById('loadTeachers').addEventListener('click', searchTeachers);
+
+    $('#loadData').click(function() {
+      searchAndDisplayUserCourses();
+    });
+  
+    window.onload = function() {
+      loadJSONFiles();
+      loadTeachersJSON();
+    };
+
+    function showSecondWindow() {
+        const window1 = document.getElementById('window1');
+        const window2 = document.getElementById('window2');
+
+        window1.style.transition = 'transform 1s ease';
+        window1.style.transform = 'translateX(-100%)';
+
+        window2.style.transition = 'transform 1s ease';
+        window2.style.transform = 'translateX(0)';
+
+        setTimeout(() => {
+            window1.style.zIndex = '1';
+            window2.style.zIndex = '2';
+        }, 1000);
+    }
+
+    function goBackToFirstWindow() {
+        const window1 = document.getElementById('window1');
+        const window2 = document.getElementById('window2');
+
+        window2.style.transition = 'transform 1s ease';
+        window2.style.transform = 'translateX(100%)';
+
+        window1.style.transition = 'transform 1s ease';
+        window1.style.transform = 'translateX(0)';
+
+        setTimeout(() => {
+            window2.style.zIndex = '1';
+            window1.style.zIndex = '2';
+        }, 1000);
+  }
+  </script>  
+</body>
+</html>

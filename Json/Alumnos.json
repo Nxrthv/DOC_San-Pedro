@@ -1,0 +1,93 @@
+[
+    {
+      "id": 12345678,
+      "nombre": "Juan Pérez",
+      "cursos": [
+        { "cursoId": 1, "nota": 14 },
+        { "cursoId": 2, "nota": 18 },
+        { "cursoId": 3, "nota": 15 },
+        { "cursoId": 4, "nota": 19 },
+        { "cursoId": 5, "nota": 17 },
+        { "cursoId": 6, "nota": 16 },
+        { "cursoId": 7, "nota": 13 }
+      ]
+    },
+    {
+      "id": 87654321,
+      "nombre": "Ana Gómez",
+      "cursos": [
+        { "cursoId": 1, "nota": 20 },
+        { "cursoId": 2, "nota": 12 },
+        { "cursoId": 3, "nota": 11 },
+        { "cursoId": 4, "nota": 14 },
+        { "cursoId": 5, "nota": 16 },
+        { "cursoId": 6, "nota": 15 },
+        { "cursoId": 7, "nota": 19 }
+      ]
+    },
+    {
+      "id": 34567890,
+      "nombre": "Carlos Martínez",
+      "cursos": [
+        { "cursoId": 1, "nota": 13 },
+        { "cursoId": 2, "nota": 17 },
+        { "cursoId": 3, "nota": 18 },
+        { "cursoId": 4, "nota": 12 },
+        { "cursoId": 5, "nota": 14 },
+        { "cursoId": 6, "nota": 16 },
+        { "cursoId": 7, "nota": 15 }
+      ]
+    },
+    {
+      "id": 56789012,
+      "nombre": "Pedro Sánchez",
+      "cursos": [
+        { "cursoId": 1, "nota": 16 },
+        { "cursoId": 2, "nota": 14 },
+        { "cursoId": 3, "nota": 13 },
+        { "cursoId": 4, "nota": 18 },
+        { "cursoId": 5, "nota": 19 },
+        { "cursoId": 6, "nota": 17 },
+        { "cursoId": 7, "nota": 12 }
+      ]
+    },
+    {
+      "id": 78901234,
+      "nombre": "María Rodríguez",
+      "cursos": [
+        { "cursoId": 1, "nota": 15 },
+        { "cursoId": 2, "nota": 16 },
+        { "cursoId": 3, "nota": 14 },
+        { "cursoId": 4, "nota": 17 },
+        { "cursoId": 5, "nota": 18 },
+        { "cursoId": 6, "nota": 19 },
+        { "cursoId": 7, "nota": 13 }
+      ]
+    },
+    {
+      "id": 90123456,
+      "nombre": "Sofía González",
+      "cursos": [
+        { "cursoId": 1, "nota": 17 },
+        { "cursoId": 2, "nota": 15 },
+        { "cursoId": 3, "nota": 16 },
+        { "cursoId": 4, "nota": 18 },
+        { "cursoId": 5, "nota": 19 },
+        { "cursoId": 6, "nota": 13 },
+        { "cursoId": 7, "nota": 14 }
+      ]
+    },
+    {
+      "id": 10234567,
+      "nombre": "Luis Hernández",
+      "cursos": [
+        { "cursoId": 1, "nota": 18 },
+        { "cursoId": 2, "nota": 17 },
+        { "cursoId": 3, "nota": 15 },
+        { "cursoId": 4, "nota": 19 },
+        { "cursoId": 5, "nota": 14 },
+        { "cursoId": 6, "nota": 16 },
+        { "cursoId": 7, "nota": 13 }
+      ]
+    }
+]

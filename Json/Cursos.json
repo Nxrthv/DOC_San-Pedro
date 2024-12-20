@@ -1,0 +1,9 @@
+[
+    { "id": 1, "nombre": "Matematica"},
+    { "id": 2, "nombre": "Comunicacion"},
+    { "id": 3, "nombre": "Ciencia y Ambiente"},
+    { "id": 4, "nombre": "Personal Social"},
+    { "id": 5, "nombre": "Educación Física"},
+    { "id": 6, "nombre": "Arte"},
+    { "id": 7, "nombre": "Inglés"}
+]  

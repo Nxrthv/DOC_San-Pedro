@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Styles/Buttons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Constancias de Vacante</title>
+</head>
+<body>
+    <h1 class="text-center display-4 my-4">Constancia de Vacante</h1>
+
+    <!-- Casillas -->
+    <div class="container py-2 w-75 mx-auto">
+        <p style="color: rgb(80, 80, 80); font-style: oblique; font-weight: 200;">Datos del Estudiante</p>
+        <div class="row">
+            <div class="col-12 col-md-4 mb-3">
+                <label for="nivel" class="py-1">Nivel de Educacion:</label>
+                <select class="form-select" name="nivel" id="nivel" required onchange="cambiarGrado(this.value)">
+                    <option disabled selected>Selecciona el Nivel</option>
+                    <option value="INICIAL">INICIAL</option>
+                    <option value="PRIMARIA">PRIMARIA</option>
+                </select>
+            </div>
+            <div class="col-12 col-md-4 mb-3">
+                <label class="py-1" for="grado">Grado de Destino:</label>
+                <select id="grado" name="grado" class="form-select" required onchange="cambiarSeccion(this.value)">
+                    <option disabled selected value="">Seleccione el Grado</option>
+                </select>
+            </div>
+            <div class="col-12 col-md-4 mb-3">
+                <label class="py-1" for="seccion">Sección de Destino:</label>
+                <select id="seccion" name="seccion" class="form-select" required>
+                    <option disabled selected value="">Seleccione la Sección</option>
+                </select>
+            </div>
+        </div>
+        <p style="color: rgb(80, 80, 80); font-style: oblique; font-weight: 200;">Datos del Estudiante</p>
+        <div class="row">
+            <div class="col-12 col-md-4 mb-3">
+                <label class="py-1" for="dni">Ingrese el DNI:</label>   
+                <input name="dni" id="dni" class="form-control" type="text" placeholder="DNI" required maxlength="8">
+            </div>
+            <div class="col-12 col-md-4 mb-3">
+                <label class="py-1" for="name">Datos del Estudiante:</label>
+                <input id="estudiante" name="estudiante" class="form-control" type="text" placeholder="Apellidos y Nombres" required>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botones -->
+    <div id="botones">
+        <!-- Botón para mostrar los Datos en la tabla -->
+    <button class="button" style="background-color: #008000da;" type="button" onclick="agregar(), alerta()">
+        <span class="button__text">Add</span>
+        <span class="button__icon"><i class="fa-solid fa-plus"></i></span>
+    </button>
+    <!-- Botón para limpiar la tabla -->
+    <button class="button" style="background-color: #ff0000d0;" type="button" onclick="limpiar()">
+        <span class="button__text">Clear</span>
+        <span class="button__icon"><i class="fa-solid fa-delete-left"></i></span>
+    </button>
+</div>
+</body>
+<!--Ajustar Grados-->
+<script>
+    function cambiarGrado(nivel) {
+        const gradoSelect = document.getElementById('grado');
+        gradoSelect.innerHTML = '<option disabled selected value="">Seleccione el Grado</option>';
+
+        let opciones = [];
+    
+        if (nivel === 'INICIAL') {
+            opciones = ['3 AÑOS','4 AÑOS','5 AÑOS'];
+        } else if (nivel === 'PRIMARIA') {
+            opciones = ['PRIMERO','SEGUNDO','TERCERO','CUARTO','QUINTO','SEXTO'];
+        }
+    
+        opciones.forEach(grado => {
+            const option = document.createElement('option');
+            option.value = grado;
+            option.textContent = grado;
+            gradoSelect.appendChild(option);
+        });
+    }
+
+    function cambiarSeccion(grado){
+        const seccionSelect = document.getElementById('seccion');
+        seccionSelect.innerHTML = '<option disabled selected value="">Seleccione la Sección</option>';
+
+        let opsecciones = [];
+    
+        if (grado === '3 AÑOS'){
+            opsecciones = ['FUCSIA','ROSADO'];
+        }
+        else if (grado === '4 AÑOS'){
+            opsecciones = ['VERDE','BLANCO','ROJO'];
+        }
+        else if (grado === '5 AÑOS'){
+            opsecciones = ['AMARILLO','ANARANJADO','LILA','CELESTE','AZUL'];
+        }
+    
+        opsecciones.forEach(seccion => {
+            const option = document.createElement('option');
+            option.value = seccion;
+            option.textContent = seccion;
+            seccionSelect.appendChild(option);
+        });
+    }
+
+    function alerta(){
+        const dni = document.getElementById('dni').value;
+        const estudiante = document.getElementById('estudiante').value;
+        const gs = document.getElementById('gs').value;
+
+        if (!dni || !estudiante || !gs) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Advertencia',
+                text: 'Todos los campos deben estar completos.',
+            });
+        }
+    }
+</script>
+</html>

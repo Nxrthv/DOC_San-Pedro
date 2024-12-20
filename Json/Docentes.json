@@ -1,0 +1,74 @@
+[
+    {
+      "grado": 1,
+      "secciones": {
+        "A": { "nombre": "Prof. Ana Pérez", "telefono": "912345678" },
+        "B": { "nombre": "Prof. Juan Gómez", "telefono": "913456789" },
+        "C": { "nombre": "Prof. Laura Ramírez", "telefono": "914567890" },
+        "D": { "nombre": "Prof. José Rodríguez", "telefono": "915678901" },
+        "E": { "nombre": "Prof. Marta Díaz", "telefono": "916789012" },
+        "F": { "nombre": "Prof. Carlos López", "telefono": "917890123" },
+        "G": { "nombre": "Prof. Patricia Martínez", "telefono": "918901234" }
+      }
+    },
+    {
+      "grado": 2,
+      "secciones": {
+        "A": { "nombre": "Prof. María Torres", "telefono": "919012345" },
+        "B": { "nombre": "Prof. Luis Sánchez", "telefono": "920123456" },
+        "C": { "nombre": "Prof. Pablo García", "telefono": "921234567" },
+        "D": { "nombre": "Prof. Ana Pérez", "telefono": "922345678" },
+        "E": { "nombre": "Prof. Juan Gómez", "telefono": "923456789" },
+        "F": { "nombre": "Prof. Laura Ramírez", "telefono": "924567890" },
+        "G": { "nombre": "Prof. José Rodríguez", "telefono": "925678901" }
+      }
+    },
+    {
+      "grado": 3,
+      "secciones": {
+        "A": { "nombre": "Prof. Sofía González", "telefono": "926789012" },
+        "B": { "nombre": "Prof. Carlos Hernández", "telefono": "927890123" },
+        "C": { "nombre": "Prof. Elena Fernández", "telefono": "928901234" },
+        "D": { "nombre": "Prof. Francisco Díaz", "telefono": "929012345" },
+        "E": { "nombre": "Prof. Gabriela Gómez", "telefono": "930123456" },
+        "F": { "nombre": "Prof. Hugo López", "telefono": "931234567" },
+        "G": { "nombre": "Prof. Inés Martínez", "telefono": "932345678" }
+      }
+    },
+    {
+      "grado": 4,
+      "secciones": {
+        "A": { "nombre": "Prof. Javier Pérez", "telefono": "933456789" },
+        "B": { "nombre": "Prof. Karen Sánchez", "telefono": "934567890" },
+        "C": { "nombre": "Prof. Lucía García", "telefono": "935678901" },
+        "D": { "nombre": "Prof. Mateo Ramírez", "telefono": "936789012" },
+        "E": { "nombre": "Prof. Natalia Rodríguez", "telefono": "937890123" },
+        "F": { "nombre": "Prof. Óscar Díaz", "telefono": "938901234" },
+        "G": { "nombre": "Prof. Paula López", "telefono": "939012345" }
+      }
+    },
+    {
+      "grado": 5,
+      "secciones": {
+        "A": { "nombre": "Prof. Rafael Torres", "telefono": "940123456" },
+        "B": { "nombre": "Prof. Sara Sánchez", "telefono": "941234567" },
+        "C": { "nombre": "Prof. Tomás García", "telefono": "942345678" },
+        "D": { "nombre": "Prof. Úrsula Pérez", "telefono": "943456789" },
+        "E": { "nombre": "Prof. Valeria Gómez", "telefono": "944567890" },
+        "F": { "nombre": "Prof. Xavier Ramírez", "telefono": "945678901" },
+        "G": { "nombre": "Prof. Yara Rodríguez", "telefono": "946789012" }
+      }
+    },
+    {
+      "grado": 6,
+      "secciones": {
+        "A": { "nombre": "Prof. Zara Díaz", "telefono": "947890123" },
+        "B": { "nombre": "Prof. Alejandro López", "telefono": "948901234" },
+        "C": { "nombre": "Prof. Beatriz Martínez", "telefono": "949012345" },
+        "D": { "nombre": "Prof. Carlos González", "telefono": "950123456" },
+        "E": { "nombre": "Prof. Diana Hernández", "telefono": "951234567" },
+        "F": { "nombre": "Prof. Eduardo Fernández", "telefono": "952345678" },
+        "G": { "nombre": "Prof. Fabiana Gómez", "telefono": "953456789" }
+      }
+    }
+]  
