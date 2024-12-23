@@ -170,14 +170,14 @@
     let teachersJSON = [];
   
     function loadJSONFiles() {
-      fetch('Alumnos.json')
+      fetch('/Json/Alumnos.json')
         .then(response => response.json())
         .then(data => {
           usersJSON = data;
         })
         .catch(error => console.error('Error al cargar Alumnos.json:', error));
   
-      fetch('Cursos.json')
+      fetch('/Json/Cursos.json')
         .then(response => response.json())
         .then(data => {
           coursesJSON = data;
@@ -219,7 +219,7 @@
     }
 
     function loadTeachersJSON() {
-        fetch('Docentes.json')
+        fetch('/Json/Docentes.json')
         .then(response => response.json())
         .then(data => {
             teachersJSON = data;

@@ -29,9 +29,6 @@ function guardarDatosEnLocalStorage() {
     insertar()
 }
 
-// Cargar datos al iniciar la página
-window.onload = cargarDatosDesdeLocalStorage;
-
 // Limpiar la Tabla
 function limpiar() {
     const tableBody = document.querySelector('table tbody');
